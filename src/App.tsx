@@ -1,11 +1,18 @@
+import BaseLayout from "./components/BaseLayout";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import VenueDetails from "./pages/VenueDetails";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p className="text-3xl font-bold underline">Hello world</p>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<BaseLayout />}>
+        <Route index element={<Home />} />
+        <Route path="/venues" element={<VenueDetails />} />
+        <Route path="/profile" element={<Profile />} />
+      </Route>
+    </Routes>
   );
 }
 
